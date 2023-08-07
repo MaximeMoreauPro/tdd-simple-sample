@@ -4,6 +4,9 @@
   "description": "Delta Capita technical assessment",
   "author": "Maxime Moreau",
   "license": "ISC",
+  "bin": {
+    "calculate-basket-price": "dist/calculate-basket-price-cli.js"
+  },
   "scripts": {
     "build": "tsc",
     "test": "jest"

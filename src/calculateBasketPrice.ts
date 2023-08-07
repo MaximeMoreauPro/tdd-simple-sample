@@ -33,13 +33,12 @@ type GetQuantityDiscount = (item: string, quantity: number) => number;
 const getDefaultQuantityDiscount: GetQuantityDiscount = (_, quantity) => quantity;
 
 export const getAvailableQuantityDiscount: GetQuantityDiscount = function (item, quantity) {
-    if(item === 'Melon') {
-        return Math.ceil(quantity / 2);
-    } else if(item === 'Lime') {
-        return Math.ceil(quantity * 2 / 3);
-    }
-
-    return quantity;
+    const quantityDiscounts = new Map<string, (quantity: number) => number>([
+        ['Melon', quantity => Math.ceil(quantity / 2)],
+        ['Lime', quantity => Math.ceil(quantity * 2 / 3)],
+    ]);
+    
+    return quantityDiscounts.get(item)?.(quantity) || quantity;
 }
 
 function groupItems(items: string[]): Record<string, number> {
