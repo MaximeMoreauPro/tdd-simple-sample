@@ -28,7 +28,7 @@ function calculateItemsPriceInPence(item: string, quantity: number, getQuantityD
     return getItemUnitPriceInPence(item) * getQuantityDiscount(item, quantity);
 }
 
-type GetQuantityDiscount = (item: string, quantity: number) => number;
+export type GetQuantityDiscount = (item: string, quantity: number) => number;
 
 const getDefaultQuantityDiscount: GetQuantityDiscount = (_, quantity) => quantity;
 
