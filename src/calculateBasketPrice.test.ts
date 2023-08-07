@@ -30,4 +30,12 @@ describe('calculateBasketPrice function that calculates the price of a basket of
             expect(calculateBasketPrice(['Apple', 'Banana', 'Melon', 'Lime', 'Apple', 'Banana', 'Melon', 'Lime'])).toBe(2.4);
         })
     })
+
+    describe('Rule: should calculate the basket price with discount according to item quantity', () => {
+        describe('Rule: buy one melon get one free', () => {
+            it('should return 0.5 when there are two melons in the basket', () => {
+                expect(calculateBasketPrice(['Melon', 'Melon'])).toBe(0.5);
+            });
+        });
+    })
 });
