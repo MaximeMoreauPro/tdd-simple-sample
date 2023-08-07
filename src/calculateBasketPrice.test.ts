@@ -16,4 +16,12 @@ describe('calculateBasketPrice function that calculates the price of a basket of
     it('should return 0.4 when there are two bananas in the basket', () => {
         expect(calculateBasketPrice(['Banana', 'Banana'])).toBe(0.4);
     })
+
+    it('should return 1 when there are two melons in the basket', () => {
+        expect(calculateBasketPrice(['Melon', 'Melon'])).toBe(1);
+    })
+
+    it('should return 0.3 when there are two limes in the basket', () => {
+        expect(calculateBasketPrice(['Lime', 'Lime'])).toBe(0.3);
+    })
 });

@@ -6,6 +6,10 @@ export function calculateBasketPrice(items: string[]): number {
             basketPrice += 0.35;
         } else if(items[i] === 'Banana') {
             basketPrice += 0.2;
+        } else if(items[i] === 'Melon') {
+            basketPrice += 0.5;
+        } else if(items[i] === 'Lime') {
+            basketPrice += 0.15;
         }
     }
 
