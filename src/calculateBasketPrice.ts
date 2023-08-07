@@ -1,10 +1,13 @@
-export function calculateBasketPrice(items: string[]): number {
+/**
+ * No quantity discount is applied by default
+ */
+export function calculateBasketPrice(items: string[], getQuantityDiscount: GetQuantityDiscount = getDefaultQuantityDiscount): number {
     let basketPrice = 0;
 
     const groupeItems = groupItems(items);
 
     for(const [item, quantity] of Object.entries(groupeItems)) {
-        basketPrice += calculateItemsPrice(item, quantity);
+        basketPrice += calculateItemsPrice(item, quantity, getQuantityDiscount);
     }
 
     return basketPrice;
@@ -21,15 +24,19 @@ function getItemUnitPrice(item: string) {
     return itemUnitPrices.get(item) || 0;
 }
 
-function calculateItemsPrice(item: string, quantity: number): number {
+function calculateItemsPrice(item: string, quantity: number, getQuantityDiscount: GetQuantityDiscount): number {
     return getItemUnitPrice(item) * getQuantityDiscount(item, quantity);
 }
 
-function getQuantityDiscount(item: string, quantity: number): number {
+type GetQuantityDiscount = (item: string, quantity: number) => number;
+
+const getDefaultQuantityDiscount: GetQuantityDiscount = (_, quantity) => quantity;
+
+export const getAvailableQuantityDiscount: GetQuantityDiscount = function (item, quantity) {
     if(item === 'Melon') {
         return Math.ceil(quantity / 2);
     }
-    return quantity
+    return quantity;
 }
 
 function groupItems(items: string[]): Record<string, number> {
