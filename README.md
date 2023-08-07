@@ -28,6 +28,15 @@ I also used _TS_ with _Jest_ and _Wallaby.js_ VS Code plugin to have a quick fee
 
 I used the Node.js native `process.argv` property to implement a basic CLI.
 
+
+### Additional BDD approach
+
+Additionaly, I also added BDD approach making the spec/test more readable with BDD syntax (given, when, then) focusing on code intent/business/why/what insteaf of how.
+It's a good practice especially for big use cases with a lot of rules.
+
+cf. code [bdd-approach](https://github.com/MaximeMoreauPro/delta-capita/pull/1/files)
+
+
 ## Installation
 
 ```bash
