@@ -45,5 +45,13 @@ describe('calculateBasketPrice function that calculates the price of a basket of
                 expect(calculateBasketPrice(['Melon', 'Melon', 'Melon', 'Melon'], getAvailableQuantityDiscount)).toBe(1);
             });
         });
+
+        describe('Rule: buy three limes for the price of two', () => {
+
+            it('should return 0.3 when there are three limes in the basket', () => {
+                expect(calculateBasketPrice(['Lime', 'Lime', 'Lime'], getAvailableQuantityDiscount)).toBe(0.3);
+            });
+
+        });
     })
 });

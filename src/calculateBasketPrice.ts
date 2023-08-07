@@ -7,25 +7,25 @@ export function calculateBasketPrice(items: string[], getQuantityDiscount: GetQu
     const groupeItems = groupItems(items);
 
     for(const [item, quantity] of Object.entries(groupeItems)) {
-        basketPrice += calculateItemsPrice(item, quantity, getQuantityDiscount);
+        basketPrice += calculateItemsPriceInPence(item, quantity, getQuantityDiscount);
     }
 
-    return basketPrice;
+    return basketPrice / 100;
 }
 
-function getItemUnitPrice(item: string) {
+function getItemUnitPriceInPence(item: string) {
     const itemUnitPrices = new Map<string, number>([
-        ['Apple', 0.35],
-        ['Banana', 0.2],
-        ['Melon', 0.5], 
-        ['Lime', 0.15]]
+        ['Apple', 35],
+        ['Banana', 20],
+        ['Melon', 50], 
+        ['Lime', 15]]
     );
 
     return itemUnitPrices.get(item) || 0;
 }
 
-function calculateItemsPrice(item: string, quantity: number, getQuantityDiscount: GetQuantityDiscount): number {
-    return getItemUnitPrice(item) * getQuantityDiscount(item, quantity);
+function calculateItemsPriceInPence(item: string, quantity: number, getQuantityDiscount: GetQuantityDiscount): number {
+    return getItemUnitPriceInPence(item) * getQuantityDiscount(item, quantity);
 }
 
 type GetQuantityDiscount = (item: string, quantity: number) => number;
