@@ -35,7 +35,10 @@ const getDefaultQuantityDiscount: GetQuantityDiscount = (_, quantity) => quantit
 export const getAvailableQuantityDiscount: GetQuantityDiscount = function (item, quantity) {
     if(item === 'Melon') {
         return Math.ceil(quantity / 2);
+    } else if(item === 'Lime') {
+        return Math.ceil(quantity * 2 / 3);
     }
+
     return quantity;
 }
 

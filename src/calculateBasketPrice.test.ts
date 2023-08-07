@@ -52,6 +52,17 @@ describe('calculateBasketPrice function that calculates the price of a basket of
                 expect(calculateBasketPrice(['Lime', 'Lime', 'Lime'], getAvailableQuantityDiscount)).toBe(0.3);
             });
 
+            it('should return 0.45 when there are four limes in the basket', () => {
+                expect(calculateBasketPrice(['Lime', 'Lime', 'Lime', 'Lime'], getAvailableQuantityDiscount)).toBe(0.45);
+            });
+
+            it('should return 0.6 when there are five melons in the basket', () => {
+                expect(calculateBasketPrice(['Lime', 'Lime', 'Lime', 'Lime', 'Lime'], getAvailableQuantityDiscount)).toBe(0.6);
+            });
+
+            it('should return 0.6 when there are five melons in the basket', () => {
+                expect(calculateBasketPrice(['Lime', 'Lime', 'Lime', 'Lime', 'Lime', 'Lime'], getAvailableQuantityDiscount)).toBe(0.6);
+            });
         });
     })
 });
