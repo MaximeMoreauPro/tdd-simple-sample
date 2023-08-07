@@ -60,7 +60,7 @@ describe('calculateBasketPrice function that calculates the price of a basket of
                 expect(calculateBasketPrice(['Lime', 'Lime', 'Lime', 'Lime', 'Lime'], getAvailableQuantityDiscount)).toBe(0.6);
             });
 
-            it('should return 0.6 when there are five melons in the basket', () => {
+            it('should return 0.6 when there are six melons in the basket', () => {
                 expect(calculateBasketPrice(['Lime', 'Lime', 'Lime', 'Lime', 'Lime', 'Lime'], getAvailableQuantityDiscount)).toBe(0.6);
             });
         });
