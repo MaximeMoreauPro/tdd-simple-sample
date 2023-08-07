@@ -4,4 +4,8 @@ describe('calculateBasketPrice function that calculates the price of a basket of
     it('should return 0 when no items are passed', () => {
         expect(calculateBasketPrice([])).toBe(0);
     })
+
+    it('should return 0.35 when there is an apple in the basket', () => {
+        expect(calculateBasketPrice(['Apple'])).toBe(0.35);
+    })
 });
