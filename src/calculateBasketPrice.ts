@@ -1,6 +1,11 @@
 export function calculateBasketPrice(items: string[]): number {
-    if(items.includes("Apple")) {
-        return 0.35;
+    let basketPrice = 0;
+
+    for(let i = 0; i < items.length; i++) {
+        if(items[i] === 'Apple') {
+            basketPrice += 0.35;
+        }
     }
-    return 0
+    
+    return basketPrice;
 }
