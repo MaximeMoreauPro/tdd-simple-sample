@@ -36,6 +36,14 @@ describe('calculateBasketPrice function that calculates the price of a basket of
             it('should return 0.5 when there are two melons in the basket', () => {
                 expect(calculateBasketPrice(['Melon', 'Melon'])).toBe(0.5);
             });
+
+            it('should return 1 when there are three melons in the basket', () => {
+                expect(calculateBasketPrice(['Melon', 'Melon', 'Melon'])).toBe(1);
+            });
+
+            it('should return 1 when there are four melons in the basket', () => {
+                expect(calculateBasketPrice(['Melon', 'Melon', 'Melon', 'Melon'])).toBe(1);
+            });
         });
     })
 });
