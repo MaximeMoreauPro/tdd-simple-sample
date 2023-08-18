@@ -1,7 +1,7 @@
 {
-  "name": "delta-capita",
+  "name": "tdd-simple-sample",
   "version": "1.0.0",
-  "description": "Delta Capita technical assessment",
+  "description": "TDD Simple Sample",
   "author": "Maxime Moreau",
   "license": "ISC",
   "bin": {

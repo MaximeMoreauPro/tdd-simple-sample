@@ -1,8 +1,6 @@
-# Delta Capita - technical assessment
+# TDD Simple Sample
 
 Using NodeJS Javascript/TypeScript, write a simple program that calculates the price of a basket of shopping.
-
-The solution should be accomplished in roughly two hours.
 
 Items are presented one at a time, in a list, identified by name - for example "Apple" or "Banana".
 
@@ -34,14 +32,11 @@ I used the Node.js native `process.argv` property to implement a basic CLI.
 Additionaly, I also added BDD approach making the spec/test more readable with BDD syntax (given, when, then) focusing on code intent/business/why/what insteaf of how.
 It's a good practice especially for big use cases with a lot of rules.
 
-cf. code [bdd-approach](https://github.com/MaximeMoreauPro/delta-capita/pull/1/files)
-
-
 ## Installation
 
 ```bash
-git clone git@github.com:MaximeMoreauPro/delta-capita.git
-cd delta-capita
+git clone git@github.com:MaximeMoreauPro/tdd-simple-sample.git
+cd tdd-simple-sample
 npm install
 ```
 
